@@ -33,57 +33,59 @@ export default function Interviews() {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="card group cursor-pointer block"
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+                className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-burgundy-900/15 transition-all duration-300 border border-charcoal/5 group cursor-pointer block"
               >
-                {/* Image card with real photo */}
-                <div className={`relative h-72 bg-gradient-to-br ${gradients[i]} overflow-hidden`}>
+                {/* Image container with high quality photo */}
+                <div className={`relative h-80 bg-gradient-to-br ${gradients[i]} overflow-hidden`}>
                   {item.image && (
                     <Image
                       src={item.image}
                       alt={item.name}
                       fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
                     />
                   )}
                   
-                  {/* Subtle dark gradient overlay for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20" />
+                  {/* Elegant dark gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/30 to-transparent" />
 
-                  {/* Exclusive tag */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="bg-burgundy-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                  {/* Top badges */}
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                    <span className="bg-burgundy-600/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
                       {t.interviews.tag}
                     </span>
-                  </div>
-                  
-                  {/* Podcast icon */}
-                  <div className="absolute top-4 right-4 z-10">
-                    <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-burgundy-600 transition-colors shadow-md">
-                      <Play size={16} className="text-white group-hover:text-burgundy-600 ml-0.5 transition-colors" />
+                    <div className="w-9 h-9 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:bg-burgundy-600 group-hover:scale-110 transition-all duration-300 shadow-lg">
+                      <Play size={14} className="text-white ml-0.5" />
                     </div>
                   </div>
 
-                  {/* Name overlay */}
+                  {/* Name and Title overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                    <h3 className="text-white font-heading text-xl font-bold drop-shadow-sm">{item.name}</h3>
-                    <p className="text-white/80 text-sm font-medium">{item.title}</p>
+                    <h3 className="text-white font-heading text-2xl font-bold leading-tight group-hover:text-burgundy-200 transition-colors">
+                      {item.name}
+                    </h3>
+                    <p className="text-white/70 text-sm mt-1 font-medium">
+                      {item.title}
+                    </p>
                   </div>
                 </div>
 
-                {/* Content */}
+                {/* Card Content */}
                 <div className="p-6">
-                  <p className="text-charcoal/60 text-sm leading-relaxed mb-4">
+                  <p className="text-charcoal/70 text-sm leading-relaxed mb-5 line-clamp-3">
                     {item.description}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 text-charcoal/40 text-sm">
-                      <Eye size={14} />
-                      {item.views}
+                  <div className="flex items-center justify-between pt-4 border-t border-charcoal/5">
+                    <div className="flex items-center gap-1.5 text-charcoal/40 text-xs font-medium">
+                      <Eye size={14} className="text-burgundy-500" />
+                      <span>{item.views} views</span>
                     </div>
-                    <span className="text-burgundy-600 text-sm font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                      {t.interviews.watchNow} →
+                    <span className="text-burgundy-600 text-sm font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5">
+                      {t.interviews.watchNow}
+                      <span className="text-base leading-none">→</span>
                     </span>
                   </div>
                 </div>
