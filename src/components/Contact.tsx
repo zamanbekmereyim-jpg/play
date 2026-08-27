@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/lib/LanguageContext'
 import AnimatedSection from './AnimatedSection'
-import { Send, Instagram, MessageCircle } from 'lucide-react'
+import { Send, Instagram, MessageCircle, Phone } from 'lucide-react'
 
 export default function Contact() {
   const { t } = useLanguage()
@@ -38,6 +38,23 @@ export default function Contact() {
                 <div>
                   <p className="font-semibold text-lg group-hover:text-white transition-colors">Telegram</p>
                   <p className="text-sm text-charcoal/50 group-hover:text-white/60 transition-colors">t.me/qplay_chess</p>
+                </div>
+              </motion.a>
+
+              {/* WhatsApp */}
+              <motion.a
+                href="https://wa.me/77718511835"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02, x: 8 }}
+                className="flex items-center gap-5 p-6 bg-cream-100 rounded-2xl hover:bg-emerald-600 hover:text-white transition-colors duration-300 group"
+              >
+                <div className="w-14 h-14 bg-emerald-600 group-hover:bg-white rounded-2xl flex items-center justify-center transition-colors">
+                  <Phone size={24} className="text-white group-hover:text-emerald-600 transition-colors" />
+                </div>
+                <div>
+                  <p className="font-semibold text-lg group-hover:text-white transition-colors">WhatsApp</p>
+                  <p className="text-sm text-charcoal/50 group-hover:text-white/80 transition-colors">{t.contact.whatsappNumber}</p>
                 </div>
               </motion.a>
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/lib/LanguageContext'
-import { Send, Instagram } from 'lucide-react'
+import { Send, Instagram, Phone } from 'lucide-react'
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -24,14 +24,25 @@ export default function Footer() {
               href="https://t.me/qplay_chess"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Telegram"
               className="w-10 h-10 bg-white/10 hover:bg-burgundy-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
             >
               <Send size={16} className="text-white" />
             </a>
             <a
+              href="https://wa.me/77718511835"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="w-10 h-10 bg-white/10 hover:bg-emerald-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+            >
+              <Phone size={16} className="text-white" />
+            </a>
+            <a
               href="https://instagram.com/qplay.hq"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram"
               className="w-10 h-10 bg-white/10 hover:bg-burgundy-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
             >
               <Instagram size={16} className="text-white" />
