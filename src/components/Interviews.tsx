@@ -27,10 +27,13 @@ export default function Interviews() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {t.interviews.items.map((item, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
-              <motion.div
+              <motion.a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="card group cursor-pointer"
+                className="card group cursor-pointer block"
               >
                 {/* Image placeholder with gradient */}
                 <div className={`relative h-64 bg-gradient-to-br ${gradients[i]} overflow-hidden`}>
@@ -43,8 +46,8 @@ export default function Interviews() {
                   
                   {/* Podcast icon */}
                   <div className="absolute top-4 right-4 z-10">
-                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                      <Play size={16} className="text-white ml-0.5" />
+                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-burgundy-600 transition-colors">
+                      <Play size={16} className="text-white group-hover:text-burgundy-600 ml-0.5 transition-colors" />
                     </div>
                   </div>
 
@@ -70,12 +73,12 @@ export default function Interviews() {
                       <Eye size={14} />
                       {item.views}
                     </div>
-                    <span className="text-burgundy-600 text-sm font-semibold group-hover:underline">
+                    <span className="text-burgundy-600 text-sm font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                       {t.interviews.watchNow} →
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             </AnimatedSection>
           ))}
         </div>
