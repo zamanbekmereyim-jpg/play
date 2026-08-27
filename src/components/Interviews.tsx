@@ -5,6 +5,8 @@ import { useLanguage } from '@/lib/LanguageContext'
 import AnimatedSection from './AnimatedSection'
 import { Play, Eye } from 'lucide-react'
 
+import Image from 'next/image'
+
 export default function Interviews() {
   const { t } = useLanguage()
 
@@ -35,31 +37,38 @@ export default function Interviews() {
                 transition={{ duration: 0.3 }}
                 className="card group cursor-pointer block"
               >
-                {/* Image placeholder with gradient */}
-                <div className={`relative h-64 bg-gradient-to-br ${gradients[i]} overflow-hidden`}>
+                {/* Image card with real photo */}
+                <div className={`relative h-72 bg-gradient-to-br ${gradients[i]} overflow-hidden`}>
+                  {item.image && (
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                  )}
+                  
+                  {/* Subtle dark gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20" />
+
                   {/* Exclusive tag */}
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="bg-burgundy-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    <span className="bg-burgundy-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
                       {t.interviews.tag}
                     </span>
                   </div>
                   
                   {/* Podcast icon */}
                   <div className="absolute top-4 right-4 z-10">
-                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-burgundy-600 transition-colors">
+                    <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-burgundy-600 transition-colors shadow-md">
                       <Play size={16} className="text-white group-hover:text-burgundy-600 ml-0.5 transition-colors" />
                     </div>
                   </div>
 
                   {/* Name overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                    <h3 className="text-white font-heading text-xl font-bold">{item.name}</h3>
-                    <p className="text-white/60 text-sm">{item.title}</p>
-                  </div>
-
-                  {/* Chess piece decorative */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/5 text-[150px] font-serif">
-                    ♕
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                    <h3 className="text-white font-heading text-xl font-bold drop-shadow-sm">{item.name}</h3>
+                    <p className="text-white/80 text-sm font-medium">{item.title}</p>
                   </div>
                 </div>
 

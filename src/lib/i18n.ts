@@ -47,6 +47,7 @@ export const translations = {
           description: 'How she became one of the strongest female chess players in Central Asia.',
           views: '2,639',
           url: 'https://www.instagram.com/p/DYXjn4UjGvE/?igsi=ajdqOXljcXFxa3F2',
+          image: '/images/interviews/zeinep-sultanbek.jpg',
         },
         {
           name: 'Amina Kairybekova',
@@ -54,6 +55,7 @@ export const translations = {
           description: 'Her journey from beginner to Grandmaster and advice for aspiring players.',
           views: '3,852',
           url: 'https://www.instagram.com/p/DXhaoMpDEsh/?igsi=cWtvd243bHBwNHNs',
+          image: '/images/interviews/amina-kairybekova.jpg',
         },
         {
           name: 'Nursulu Abu',
@@ -61,6 +63,7 @@ export const translations = {
           description: 'After dozens of rejections — the story of getting into Korea University.',
           views: '4,082',
           url: 'https://www.instagram.com/p/DcachfoDDXk/?igsi=MWZsdnExNzg1dmE4cA==',
+          image: '/images/interviews/nursulu-abu.jpg',
         },
       ],
     },
@@ -171,6 +174,7 @@ export const translations = {
           description: 'Как она стала одной из сильнейших шахматисток Центральной Азии.',
           views: '2 639',
           url: 'https://www.instagram.com/p/DYXjn4UjGvE/?igsi=ajdqOXljcXFxa3F2',
+          image: '/images/interviews/zeinep-sultanbek.jpg',
         },
         {
           name: 'Амина Кайрыбекова',
@@ -178,6 +182,7 @@ export const translations = {
           description: 'Её путь от начинающей до гроссмейстера и советы для будущих чемпионок.',
           views: '3 852',
           url: 'https://www.instagram.com/p/DXhaoMpDEsh/?igsi=cWtvd243bHBwNHNs',
+          image: '/images/interviews/amina-kairybekova.jpg',
         },
         {
           name: 'Нурсулу Абу',
@@ -185,6 +190,7 @@ export const translations = {
           description: 'После десятков отказов — история поступления в Korea University.',
           views: '4 082',
           url: 'https://www.instagram.com/p/DcachfoDDXk/?igsi=MWZsdnExNzg1dmE4cA==',
+          image: '/images/interviews/nursulu-abu.jpg',
         },
       ],
     },
