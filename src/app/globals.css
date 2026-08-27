@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream-100 text-charcoal;
+  }
+}
+
+@layer components {
+  .chess-pattern {
+    background-image: 
+      linear-gradient(45deg, rgba(139,26,43,0.05) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(139,26,43,0.05) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(139,26,43,0.05) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(139,26,43,0.05) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  }
+  
+  .chess-pattern-dark {
+    background-image: 
+      linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  }
+
+  .gradient-burgundy {
+    background: linear-gradient(135deg, #8B1A2B 0%, #1A1A2E 100%);
+  }
+
+  .gradient-burgundy-light {
+    background: linear-gradient(135deg, #A52A2A 0%, #8B1A2B 100%);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #FFF5F0 0%, #FFE8E0 50%, #F5C6C6 100%);
+  }
+  
+  .btn-primary {
+    @apply bg-burgundy-600 hover:bg-burgundy-500 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-burgundy-600/30;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-burgundy-600 text-burgundy-600 hover:bg-burgundy-600 hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden;
+  }
+
+  .section-title {
+    @apply font-heading text-4xl md:text-5xl font-bold text-charcoal mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-charcoal/60 max-w-2xl mx-auto;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #8B1A2B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A52A2A;
+}
+
+/* Hero character animation */
+@keyframes breathe {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.02) translateY(-8px); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
+}
+
+.hero-character {
+  animation: breathe 4s ease-in-out infinite, sway 6s ease-in-out infinite;
+}
+
+/* Chess pieces floating */
+@keyframes float-piece {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+  50% { transform: translateY(-30px) rotate(10deg); opacity: 0.25; }
+}
+
+.chess-piece-float {
+  animation: float-piece 5s ease-in-out infinite;
+}
